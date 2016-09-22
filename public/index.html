@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HBBK-Ifgi Data Collection</title>
+
+  <link rel="stylesheet" href="css/index.css">
+
+  <link rel="stylesheet" href="lib/bootstrap-3.2.0-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+  <script src="lib/jquery.bootstrap.wizard.min.js"></script>
+  <script src="lib/jquery.form.min.js"></script>
+  <script src="lib/jquery.datatables.min.js"></script>
+
+  <!-- Custom -->
+  <script src="js/index.js" type="text/javascript"></script>
+  
+</head>
+
+  <body style="overflow-x:hidden;">
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="Home">Images</a></li>
+            <li><a href="AddImage">Add New Image</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <a class="navbar-brand" href="#"><img src="img/logo-ifgi-text-de.png" height="30px"/></a>
+            <a class="navbar-brand" href="#"><img src="img/hbbk_Logo_pur.png" height="30px"/></a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      
+    <div class="container-fluid text-center">
+      <div class="row content">
+
+        <div class="col-sm-12 text-left">
+          <div class="panel panel-default">
+            <div class="panel-body content">
+              <div id="Home" class="cont" style="overflow-y:auto;max-height:70vh;">
+                <table id="table" class="display">
+                  <thead>
+                    <tr>
+                      <th>Route</th>
+                      <th>Location</th>
+                      <th>Images</th>
+                      <th>Created</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+              <div id="AddImage" class="cont" style="display:none;">
+                <div id="rootwizard">
+                  <div class="navbar navbar-default">
+                    <div class="navbar-header">
+                      <div class="container-flud">
+                        <ul>
+                          <li><a href="#tab1" data-toggle="tab">Route</a></li>
+                          <li><a href="#tab2" data-toggle="tab">Raw Image</a></li>
+                          <li><a href="#tab3" data-toggle="tab">Blurred Image</a></li>
+                          <li><a href="#tab4" data-toggle="tab">Referenced Objects Image</a></li>
+                          <li><a href="#tab5" data-toggle="tab">Referenced Objects</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="pager wizard">
+                    <li class="previous first" style="display:none;"><a href="#">First</a></li>
+                    <li class="previous"><a href="#">Previous</a></li>
+                    <li class="next last" style="display:none;"><a href="#">Last</a></li>
+                    <li class="next"><a href="#">Next</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <div class="tab-pane" id="tab1">
+                      <label>Route Number</label>
+                      <div class="dropdown">     
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                          Routes
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                        </ul>
+                      </div>
+                      <label>Primary Activity of the Route</label>
+                      <input type="text" class="form-control" id="primary-activity" aria-describedby="basic-addon3">
+                      <label>Origin Point Name</label>
+                      <input type="text" class="form-control" id="origin-point-name" aria-describedby="basic-addon3">
+                      <label>Destination Point name</label>
+                      <input type="text" class="form-control" id="destination-point-name" aria-describedby="basic-addon3">
+                    </div>
+                    <div class="tab-pane" id="tab2">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <a href="#" class="thumbnail file raw">
+                            <img src="img/icon-image-128.png" height=80% id="imagetab2">
+                          </a>
+                          <button type="button" class="btn btn-primary file raw">
+                            Upload Image 
+                          </button>
+                        </div>
+                        <div class="col-md-8">
+                          <label>Latitude</label>
+                          <input type="text" class="form-control" id="latitude" aria-describedby="basic-addon3" disabled>
+                          <label>Longitude</label>
+                          <input type="text" class="form-control" id="longitude" aria-describedby="basic-addon3" disabled>
+                          <label>Date of Capture</label>
+                          <input type="text" class="form-control" id="data-captured" aria-describedby="basic-addon3" disabled>
+                          <label>Device</label>
+                          <input type="text" class="form-control" id="device" aria-describedby="basic-addon3" disabled>
+                          <label>Raw Image Size</label>
+                          <div class="input-group">
+                            <input type="text" class="form-control" id="raw-image-size" aria-describedby="basic-addon3" disabled>
+                            <span class="input-group-addon">MB</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane" id="tab3">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <a href="#" class="thumbnail file blurred">
+                            <img src="img/icon-image-128.png" height=80% id="imagetab3">
+                          </a>
+                          <button type="button" class="btn btn-primary file blurred">
+                            Upload Image
+                          </button>
+                        </div>
+                        <div class="col-md-8">
+                          <label>Blurred Image Size</label>
+                          <div class="input-group">
+                            <input type="text" class="form-control" id="blurred-image-size" aria-describedby="basic-addon3" disabled>
+                            <span class="input-group-addon">MB</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane" id="tab4">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <a href="#" class="thumbnail file highlighted">
+                            <img src="img/icon-image-128.png" height=80% id="imagetab4">
+                          </a>
+                          <button type="button" class="btn btn-primary file highlighted">
+                            Upload Image
+                          </button>
+                        </div>
+                        <div class="col-md-8">
+                          <label>Highlighted Image Size</label>
+                          <div class="input-group">
+                            <input type="text" class="form-control" id="highlighted-image-size" aria-describedby="basic-addon3" disabled>
+                            <span class="input-group-addon">MB</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane" id="tab5">
+                      <div id="r-object-form" style="overflow-y:auto; overflow-x:hidden;max-height:52vh;">
+                      </div>
+                      <br>
+                      <button type="button" id="btn-add-row" class="btn btn-primary pull-right">
+                        Add Row
+                      </button>
+                    </div>
+                  </div>  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-2 sidenav">
+          <div class="panel panel-default" style="margin-top:20%; height:70%; hidden;">
+            <div class="panel-heading" style="height:20%;">
+              <h3>
+                Instructions
+              </h3>
+            </div>
+            <div class="panel-body hint" id="instructionsPane" style="height:80%">
+            </div>
+          </div>
+          <button type="button" id="btn-submit" class="btn btn-primary pull-right">
+            Submit all Data
+          </button>
+        </div>
+        <form id="uploadFormBlurred" enctype="multipart/form-data" action="api/image/blurred/upload" method="post" hidden="true">
+            <input type="file" name="userfile" id="fileInputBlurred" accept="image/jpeg" />
+            <input type="submit" value="Upload Image" name="submit" id="fileSubmitBlurred">
+            <span id = "status"></span>
+          </form>
+          <form id="uploadFormHighlighted" enctype="multipart/form-data" action="api/image/highlighted/upload" method="post" hidden="true">
+            <input type="file" name="userfile" id="fileInputHighlighted"/>
+            <input type="submit" value="Upload Image" name="submit" id="fileSubmitHighlighted">
+            <span id = "status"></span>
+          </form>
+          <form id="uploadFormRaw" enctype="multipart/form-data" action="api/image/raw/upload" method="post" hidden="true">
+            <input type="file" name="userfile" id="fileInputRaw"/>
+            <input type="submit" value="Upload Image" name="submit" id="fileSubmitRaw">
+            <span id = "status"></span>
+          </form>
+      </div>
+    </div>
+  </body>
+
+</html>

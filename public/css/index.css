@@ -1,0 +1,65 @@
+body {
+  background-image: url('../img/muenster_map3.gif');
+  background-size: 100% 100%;
+  height:100vh;
+}
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+  height:80vh;
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  opacity: 0.85;
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+.panel-body.content {
+  height:80vh;
+}
+
+.panel-heading {
+  background-image: none;
+  background-color: #dd1;
+}
+
+.text-left {
+  opacity:0.92;
+}
+
+.hint {
+  background-color: #d9d9d9;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height:auto;}
+}
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
