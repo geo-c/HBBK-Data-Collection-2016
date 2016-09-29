@@ -5,6 +5,7 @@
 
 Install PostgreSQL database https://www.postgresql.org/ with Postgis http://postgis.net/ extension.
 
+```sql
 CREATE TABLE routes_table (
     route_id SERIAL PRIMARY KEY,
     primary_route_purposes character varying(255),
@@ -44,3 +45,4 @@ CREATE TABLE objects_points_relationship (
     reference_object_id integer NOT NULL REFERENCES reference_objects_table(reference_object_id) ON UPDATE CASCADE ON DELETE CASCADE,
     point_id integer NOT NULL REFERENCES points_table(point_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
+```
