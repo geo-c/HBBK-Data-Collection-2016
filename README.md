@@ -1,5 +1,7 @@
 # HBBK-Data-Collection-2016
 
+###Example image collected:
+![HBBK Example](/images/hbbk_example.png)
 
 ###Setup Database:
 
