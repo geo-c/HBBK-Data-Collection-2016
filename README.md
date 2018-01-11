@@ -1,4 +1,4 @@
-# MuensterPointsOfInterest2016
+# MuensterPointsOfInterest
 
 This project was done in collaboration with the Hans-Böckler-Berufskolleg(https://www.hbbk-muenster.de/) in Muenster. The goal was to collect Open geospatial dataset with routes, landmarks, and decision and confirmation points relevant for young refugees and asylum seekers arriving to Münster (MS), Germany.
 
